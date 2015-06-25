@@ -1,0 +1,28 @@
+doctype html
+html
+	head
+		title= '新的客人嗎?這邊註冊喔'
+	body(background="http://i.imgur.com/bChWRNk.jpg",style='background-repeat:no-repeat;background-size:2000px')
+		div(style='float:left;margin:0px;font-family:"微軟正黑體";font-size:20px')
+			a(href='/') 這邊回去唷!!
+	
+		div(style='float:right')
+				a(href='/signin', style='margin:10px;font-family:"微軟正黑體";font-size:20px;') 登入囉!!
+				a(href='/forget', style='margin:10px;font-family:"微軟正黑體";font-size:20px;') 客人真健忘呢!!來這裡想起密碼吧
+	
+		div(style='padding:100px;')
+			form(name="login", action="/apis/login", method="post")
+				h1(style='color:#00CED1;font-family:"微軟正黑體";font-size:50px') 這邊註冊~
+				div
+					p
+						label(style='padding-right:25px;font-family:"微軟正黑體";color:#00FFFF;font-size:20px') 主人的名字 或是 信箱:
+						input(type="text", name="user")
+					p
+						label(style='padding-right:115px;font-family:"微軟正黑體";color:#00FFFF;font-size:20px') 主人的密碼:
+						input(type="password", name="passwd")
+				p
+					span(style='padding-right:400px')
+					input(type="submit", name="submit", value="註冊~")
+						
+						
+						

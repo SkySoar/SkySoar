@@ -1,0 +1,27 @@
+doctype html
+html
+	head
+		title= '天翱'
+	body(background="http://i.imgur.com/f8TnnLB.jpg",style='background-repeat:no-repeat;background-size:2000px')
+		div(style='float:right')
+			if (username && authenticated)
+				spana(style='margin:10px;font-family:"微軟正黑體";font-size:20px;color:#24367D') #{username}
+				a(href='/signout', style='margin:10px;font-family:"微軟正黑體";font-size:20px;') 真的要離開嗎!?
+				a(href='/add_article', style='margin:10px;font-family:"微軟正黑體";font-size:20px;') 新增文章!!
+				a(href='/profile', style='margin:10px;font-family:"微軟正黑體";font-size:20px;') 主人~歡迎回來
+			else
+				a(href='/signin', style='margin:10px;font-family:"微軟正黑體";font-size:20px;') 登入囉!!
+				a(href='/register', style='margin:10px;font-family:"微軟正黑體";font-size:20px;') 新的客人嗎?這邊註冊喔
+				a(href='/forget', style='margin:10px;font-family:"微軟正黑體";font-size:20px;') 客人真健忘呢!!來這裡想起密碼吧
+	
+	div(style='padding:50px;')
+		h1(style='font-size:50px;font-family:"微軟正黑體";color:#6495ed')= '歡迎來到天翱的部落格'
+
+	for article in blogs
+		div
+			div(style='float:left;margin-top:10px;font-family:"微軟正黑體";color:#00FFFF;font-size:20px;')= article.Username
+			div(style='float:right;margin-top:10px;font-family:"微軟正黑體";color:#00FFFF;font-size:20px;')= article.CreateDate
+			br
+			div(style='clear:both;font-family:"微軟正黑體";color:#00FFFF;font-size:20px;')= article.Article
+				a(href='/message/'+article.id, style='float:right;margin-top:105px;margin-right:20px;font-family:"微軟正黑體";color:#00FFFF;font-size:20px;') 留言唷~
+			hr(style='margin-top:110px;')
